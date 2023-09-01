@@ -27,7 +27,7 @@
 Чтобы выполнить поиск по ID и загрузить результат в виде JSON можно выполнив запрос GET на http://localhost:3000/api/4.
 Цифра в конце является ID номером
 
-![Загрузить по ID](https://github.com/TomSG03/Sort-PostgresSQL/blob/main/imageMD/findId.PNG)
+![Загрузить по ID](https://github.com/TomSG03/Sort-PostgresSQL/blob/main/imageMD/loadId.PNG)
 
 Очистить таблицу можно выполнив запрос - DELETE на http://localhost:3000/api
 
