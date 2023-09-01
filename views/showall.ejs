@@ -1,0 +1,23 @@
+<%- include("./partials/header") %>
+<div class="main"> 
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+
+        <th scope="col">ID</th>
+        <th scope="col">Сортировка</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% response.forEach(function(result){ %>
+      <tr>
+        <td><%= result.id %></td>
+        <td><%= result.arrSort.join(' ') %></td>
+      </tr>
+      <%  }); %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("./partials/footer") %>

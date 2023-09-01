@@ -1,0 +1,19 @@
+
+  <%- include("./partials/header") %>
+  <div class="main">
+    <form>
+      <div class="mb-3">
+        <label for="id сортировки" class="form-label">ID сохраненной сортировки</label>
+        <input type="text" class="form-control" id="numberSort">
+        <div id="numberHelp" class="form-text">Введите ID номер - число</div>
+      </div>
+      <div class="btnBlock">
+        <button type="submit" class="btn btn-primary float-sm-right"  id="btnFind">Найти</button>
+      </div>
+    </form>
+    <div class="alert alert-light" role="alert" id="result">
+      Результат поиска - пока ничего нет
+    </div>
+  </div>
+  <script src="js/showbyid.js"></script>
+  <%- include("./partials/footer") %>

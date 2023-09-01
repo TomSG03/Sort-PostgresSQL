@@ -1,0 +1,20 @@
+
+  <%- include("./partials/header") %>
+  <div class="main">
+    <form>
+      <div class="mb-3">
+        <label for="Числа для сортировки" class="form-label">Сортировка чисел</label>
+        <input type="text" class="form-control" id="numberSort">
+        <div id="numberHelp" class="form-text">Введите числа через пробел</div>
+      </div>
+      <div class="btnBlock">
+        <button type="submit" class="btn btn-primary float-sm-right"  id="btnSort">Сортировать</button>
+        <button type="submit" class="btn btn-primary float-sm-right"  id="btnSave">Сохранить</button>
+      </div>
+    </form>
+    <div class="alert alert-light" role="alert" id="result">
+      Результат сортировки - пока ничего нет
+    </div>
+  </div>
+  <script src="js/sort.js"></script>
+  <%- include("./partials/footer") %>

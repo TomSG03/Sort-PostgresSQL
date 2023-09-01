@@ -1,0 +1,17 @@
+.main {
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+form{
+  margin: 40px 0;
+}
+
+.btnBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
+.alertColor {
+  --bs-border-color: red;
+}
