@@ -1,1 +1,1 @@
-CREATE DATABASE sorting
+CREATE DATABASE sorting;
