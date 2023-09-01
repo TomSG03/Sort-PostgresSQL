@@ -1,4 +1,4 @@
-# Сортировка чискл с сохранением результат в PostgresSQL
+# Сортировка чисел с сохранением результата в PostgresSQL
 
 ## Настройка
 
@@ -13,19 +13,22 @@
 ## Функционал
 
 ###    1.  Сортировка и сохранение результатов в БД
-  ![сортировка]()
+  ![сортировка](https://github.com/TomSG03/Sort-PostgresSQL/blob/main/imageMD/sorting.PNG)
 ###    2.  Отображение всех результатов
-  ![Результат]()
+  ![Результат](https://github.com/TomSG03/Sort-PostgresSQL/blob/main/imageMD/result.PNG)
 ###    3.  Поиск по ID сортировки в БД
-  ![Поиск по ID]()
+  ![Поиск по ID](https://github.com/TomSG03/Sort-PostgresSQL/blob/main/imageMD/findId.PNG)
 ###    4.  Запрос в адресной строке браузера и очиска таблицы БД
 
-загрузить все результаты в виде JSON можно послав GET - запрос на http://localhost:3000/api/all
-![Загрузить все]()
+Загрузить все результаты в виде JSON можно выполнив запрос - GET на http://localhost:3000/api/all
 
-Чтобы выполнить поиск по ID и загрузить результат в виде JSON можно послав GET - запрос на http://localhost:3000/api/4 
+![Загрузить все](https://github.com/TomSG03/Sort-PostgresSQL/blob/main/imageMD/loadAll.PNG)
+
+Чтобы выполнить поиск по ID и загрузить результат в виде JSON можно выполнив запрос GET на http://localhost:3000/api/4.
 Цифра в конце является ID номером
-![Загрузить по ID]()
 
-Очистить таблицу можно послав DELETE - запрос на http://localhost:3000/api
-![Удаление]()
+![Загрузить по ID](https://github.com/TomSG03/Sort-PostgresSQL/blob/main/imageMD/loadId.PNG)
+
+Очистить таблицу можно выполнив запрос - DELETE на http://localhost:3000/api
+
+![Удаление](https://github.com/TomSG03/Sort-PostgresSQL/blob/main/imageMD/clearTable.PNG)
