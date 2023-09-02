@@ -56,14 +56,9 @@ class dbController {
     return result;
   }
 
-  async deleteAll(req, res) {
-    
+  async deleteAll(req, res) { 
     const items = await db.query(`delete from list_sort`);
     return items;
-  }
-
-  async deleteById(req, res) {
-    
   }
 }
 
