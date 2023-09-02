@@ -25,7 +25,7 @@ function clickSave(e) {
 
 function checkInput() {
   let result = true;
-  if (stringSort.value === '' || !/^[0-9' ']+$/.test(stringSort.value)) {
+  if (stringSort.value === '' || !/^[-0-9' ']+$/.test(stringSort.value)) {
     result = false
     stringSort.classList.toggle('alertColor');
     setTimeout(() => stringSort.classList.toggle('alertColor'), 1000)
