@@ -11,7 +11,7 @@ function clickSort(e) {
   e.preventDefault();
   if (checkInput() === true) {
     arrSort = stringSort.value.split(' ').map(Number);
-    bubbleSort(true);
+    bubbleSort(1);
     sortResult.innerText = arrSort.join(' ');
   }
 }
