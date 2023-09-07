@@ -1,5 +1,5 @@
 const express = require('express');
-const dbController = require('./dbController');
+const dbController = require('./back/dbController');
 
 const app = express();
 const port = 3000;
