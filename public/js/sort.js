@@ -1,11 +1,26 @@
 let arrSort = [];
+
 const stringSort = document.getElementById('numberSort');
 const btnSort = document.getElementById('btnSort');
 const btnSave = document.getElementById('btnSave');
+const btnType = document.getElementById('btnType')
 const sortResult = document.getElementById('result');
 
 btnSort.addEventListener("click", clickSort);
 btnSave.addEventListener("click", clickSave);
+btnType.addEventListener("click", clickType);
+
+
+function clickType(e) {
+  e.preventDefault();
+  if (btnType.dataset.type === '1') {
+    btnType.dataset.type = '0';
+    btnType.textContent = 'По убыванию';
+  } else {
+    btnType.dataset.type = '1';
+    btnType.textContent = 'По возрастанию';
+  }
+}
 
 function clickSort(e) {
   e.preventDefault();
@@ -25,7 +40,7 @@ function clickSave(e) {
 
 function checkInput() {
   let result = true;
-  if (stringSort.value === '' || !/^[-0-9' ']+$/.test(stringSort.value)) {
+  if (stringSort.value === '' || !/^[-0-9.' ']+$/.test(stringSort.value)) {
     result = false
     stringSort.classList.toggle('alertColor');
     setTimeout(() => stringSort.classList.toggle('alertColor'), 1000)
@@ -36,14 +51,20 @@ function checkInput() {
 function bubbleSort(step) {
   if (step < arrSort.length) {
     for (let j = 0; j < arrSort.length; j++) {
-      if (arrSort[j] > arrSort[j + 1]) {
-        const tmp = arrSort[j];
-        arrSort[j] = arrSort[j + 1];
-        arrSort[j + 1] = tmp;
+      if (btnType.dataset.type === '1' && arrSort[j] > arrSort[j + 1]) {
+        numChange(j)
+      } else if (btnType.dataset.type === '0' && arrSort[j] < arrSort[j + 1]) {
+        numChange(j)
       }
     }
     bubbleSort(step + 1);
   }
+}
+
+function numChange(j) {
+  const tmp = arrSort[j];
+  arrSort[j] = arrSort[j + 1];
+  arrSort[j + 1] = tmp;
 }
 
 function sortSend() {
