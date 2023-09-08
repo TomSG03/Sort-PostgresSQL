@@ -42,7 +42,7 @@ class Sorter {
   clickSave(e) {
     e.preventDefault();
     if (this.checkInput() === true) {
-      this.db.sortSend(this.arrSort, this.message.bind(this));
+      this.db.sendSort(this.arrSort, this.message.bind(this));
     }
   }
 
@@ -60,31 +60,5 @@ class Sorter {
     }
     return result;
   }
-
-  // sortSend() {
-  //   const newPost = {
-  //     numbers: this.arrSort
-  //   }
-  //   fetch(this.addr + '/api', {
-  //     method: 'POST',
-  //     body: JSON.stringify(newPost), // Тело запроса в JSON-формате
-  //     headers: {
-  //       'Content-type': 'application/json; charset=UTF-8',
-  //     },
-  //   })
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error('Error occurred!')
-  //       }
-  //       return response.json()
-  //     })
-  //     .then((data) => {
-  //       this.sortResult.innerText = data;
-  //       setTimeout(() => this.sortResult.innerText = 'Результат сортировки - пока ничего нет', 2000)
-  //     })
-  //     .catch((err) => {
-  //       console.log(err)
-  //     })
-  // }
 }
 
