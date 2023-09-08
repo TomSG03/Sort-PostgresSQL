@@ -2,6 +2,11 @@ button {
   width: 150px;
 }
 
+.delete {
+  width: 100%;
+}
+
+
 .main {
   max-width: 500px;
   margin: 40px auto;
@@ -19,3 +24,17 @@ form{
 .alertColor {
   --bs-border-color: red;
 }
+
+/* table {
+  margin: 20px 0;
+} */
+
+tr {
+  vertical-align: middle;
+}
+
+.alert {
+  --bs-alert-padding-x: 0.4rem;
+  --bs-alert-padding-y: 0.4rem;
+}
+

@@ -56,7 +56,7 @@ class Sorter {
     if (this.stringSort.value === '' || !/^[-0-9.' ']+$/.test(this.stringSort.value)) {
       result = false
       this.stringSort.classList.toggle('alertColor');
-      setTimeout(() => stringSort.classList.toggle('alertColor'), 1000)
+      setTimeout(() => this.stringSort.classList.toggle('alertColor'), 1000)
     }
     return result;
   }
