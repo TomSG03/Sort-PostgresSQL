@@ -12,7 +12,7 @@
         <th scope="col">Сортировка</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="table">
       <% response.forEach(function(result){ %>
       <tr>
         <td><input type="checkbox" data-id=<%= result.id %> /></td>

@@ -1,3 +1,4 @@
+const { query } = require('express');
 const db = require('./db');
 
 class dbController {
@@ -28,10 +29,12 @@ class dbController {
           arrSort: []
         }
         const items = await db.query(`SELECT item FROM list_sort where id = ($1)`, [index]);
-        items.rows.forEach(element => {
-          item.arrSort.push(element.item);
-        });
-        result.push(item);        
+        if (items.rowCount > 0) {
+          items.rows.forEach(element => {
+            item.arrSort.push(element.item);
+          });
+          result.push(item);        
+        }
       }
   
     }
@@ -61,6 +64,13 @@ class dbController {
     // await db.query(`ALTER SEQUENCE list_sort RESTART WITH 1`);
     return items;
   }
+
+  async deleteById(req, res) { 
+    const queryStr = `delete from list_sort where id in (${req.body.numbers.join(', ')})`;
+    const items = await db.query(queryStr);
+    return items;
+  }
+
 }
 
 module.exports = new dbController();

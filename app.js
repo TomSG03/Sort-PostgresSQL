@@ -19,7 +19,9 @@ app.get('/', (req, res) => {
 
 app.get('/showall', (req, res) => {
   const allItems = dbController.getAll(req, res);
-  allItems.then((response) => res.render('showall', {response}));
+  allItems.then((response) => {
+  res.render('showall', {response})
+  });
 });
 
 app.get('/showbyid', (req, res) => {
@@ -43,6 +45,12 @@ app.get('/api/all', (req, res) => {
 app.get('/api/:id', (req, res) => {
   const numbers = dbController.getById(req, res);
   numbers.then((response) => res.json(response));  
+});
+
+app.put('/api/', (req, res) => {
+  dbController.deleteById(req, res);
+  const allItems = dbController.getAll(req, res);
+  allItems.then((response) => res.json(response));
 });
 
 app.get('*', function(req, res){

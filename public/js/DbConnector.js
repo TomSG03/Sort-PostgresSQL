@@ -11,7 +11,7 @@ class DbConnector {
     }
     fetch(this.path + this.api, {
       method: 'POST',
-      body: JSON.stringify(newPost), // Тело запроса в JSON-формате
+      body: JSON.stringify(newPost),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
@@ -35,8 +35,8 @@ class DbConnector {
       numbers: arr
     }
     fetch(this.path + this.api, {
-      method: 'DELETE',
-      body: JSON.stringify(newPost), // Тело запроса в JSON-формате
+      method: 'put',
+      body: JSON.stringify(newPost), 
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
