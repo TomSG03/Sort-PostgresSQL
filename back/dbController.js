@@ -4,10 +4,11 @@ const db = require('./db');
 class dbController {
   async add(req, res) {
     const { numbers  } = req.body;
-    const lastId = await db.query(`SELECT * from list_sort WHERE CTID = (SELECT MAX(CTID) FROM list_sort)`);
+    // const lastId = await db.query(`SELECT * from list_sort WHERE CTID = (SELECT MAX(CTID) FROM list_sort)`);
+    const lastId = await db.query(`SELECT MAX(id) FROM list_sort`);
     let id = 0;
     if (lastId.rowCount === 0)  { id = 1 }
-    else { id = lastId.rows[0].id + 1 }
+    else { id = lastId.rows[0].max + 1 }
     const result = this.addNumbers(numbers, id);
     return result;
   }
@@ -21,9 +22,10 @@ class dbController {
   
   async getAll(req, res) {
     const result = [];
-    const lastId = await db.query(`SELECT * from list_sort WHERE CTID = (SELECT MAX(CTID) FROM list_sort)`);
+    // const lastId = await db.query(`SELECT * from list_sort WHERE CTID = (SELECT MAX(CTID) FROM list_sort)`);
+    const lastId = await db.query(`SELECT MAX(id) FROM list_sort`);
     if (lastId.rowCount > 0) {
-      for (let index = 1; index < lastId.rows[0].id + 1; index++) {
+        for (let index = 1; index < lastId.rows[0].max + 1; index++) {
         const item = {
           id: index,
           arrSort: []

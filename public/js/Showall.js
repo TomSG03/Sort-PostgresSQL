@@ -8,7 +8,6 @@ class Showall {
     this.deltResult = doc.getElementById('result');
     this.rows = doc.querySelectorAll('tbody > tr > td > input');
     this.tableBody = document.getElementById('table');
-    console.log(this.tableBody);
 
     this.arrDelete = [];
     this.result = {};
@@ -36,7 +35,6 @@ class Showall {
   clickDelete(e) {
     e.preventDefault();
     if (this.checkInput() === true) {
-      console.log(this.arrDelete);
       this.db.sendDelete(this.arrDelete, this.message.bind(this));
     } else {
       this.message('Ничего не выбрано');
@@ -70,7 +68,6 @@ class Showall {
     this.rows.forEach(e => {
       if (e.checked) {
         this.arrDelete.push(e.dataset.id)
-        console.log(e.dataset.id)
       }
     })
     const result = this.arrDelete.length > 0 ? true : false;  
